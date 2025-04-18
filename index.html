@@ -1,12 +1,381 @@
 <!DOCTYPE html>
-     <html lang="en">
-     <head>
-         <meta charset="UTF-8">
-         <title>Redirecting to Airbnb</title>
-         <meta http-equiv="refresh" content="3; url=https://www.airbnb.com/h/westfiradventurebungalow">
-     </head>
-     <body>
-         <h1>You will be redirected to Airbnb in 3 seconds...</h1>
-         <p>If you don't get redirected, <a href="https://www.airbnb.com/h/westfiradventurebungalow">click here</a>.</p>
-     </body>
-     </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West Fir Adventure Bungalow</title>
+    <meta http-equiv="refresh" content="10; url=https://www.airbnb.com/h/westfiradventurebungalow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2e5c3c;
+            --secondary-color: #f8f4e3;
+            --accent-color: #e78a37;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(46, 92, 60, 0.8) 0%, rgba(46, 92, 60, 0.9) 100%);
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin: 30px 0 20px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent-color);
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        
+        .image-container {
+            margin: 40px auto;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .feature-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .section {
+            padding: 40px 0;
+        }
+        
+        .section-light {
+            background-color: white;
+        }
+        
+        .section-dark {
+            background-color: var(--light-gray);
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            flex-basis: calc(33.333% - 20px);
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .hotspots {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .hotspot-card {
+            flex-basis: calc(50% - 15px);
+            display: flex;
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .hotspot-content {
+            flex: 1;
+        }
+        
+        .hotspot-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .hotspot-image {
+            width: 150px;
+            height: 100px;
+            margin-left: 15px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .cta-bar {
+            background-color: var(--accent-color);
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            margin-top: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .button:hover {
+            background-color: #234730;
+        }
+        
+        .redirect-notice {
+            text-align: center;
+            padding: 15px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .feature-card {
+                flex-basis: calc(50% - 15px);
+            }
+            
+            .hotspot-card {
+                flex-basis: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .feature-card {
+                flex-basis: 100%;
+            }
+            
+            .hotspot-image {
+                width: 100px;
+                height: 70px;
+            }
+        }
+        
+        /* Countdown timer styles */
+        #countdown {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-bg"></div>
+        <div class="container header-content">
+            <h1>West Fir Adventure Bungalow</h1>
+            <p class="subtitle">Your Gateway to Oregon's Outdoor Paradise</p>
+            <a href="https://www.airbnb.com/h/westfiradventurebungalow" class="button">View on Airbnb</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="/api/placeholder/800/500" alt="West Fir Adventure Bungalow" class="feature-image">
+        </div>
+    </div>
+
+    <section class="section section-light">
+        <div class="container">
+            <h2>Bungalow Amenities</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Fully Equipped Kitchen</h3>
+                    <p>Modern appliances and everything you need to prepare delicious meals during your stay.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Cozy Fireplace</h3>
+                    <p>Warm up by the fireplace after a day of outdoor adventures in the mountains.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Private Hot Tub</h3>
+                    <p>Relax under the stars in your own private hot tub on the deck.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Outdoor Deck</h3>
+                    <p>Spacious deck with BBQ grill and seating to enjoy the beautiful forest views.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>High-Speed WiFi</h3>
+                    <p>Stay connected with complimentary high-speed internet throughout your stay.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Pet Friendly</h3>
+                    <p>Your furry friends are welcome to join your adventure in our bungalow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2>Local Attractions</h2>
+            <div class="hotspots">
+                <div class="hotspot-card">
+                    <div class="hotspot-content">
+                        <h3>Willamette National Forest</h3>
+                        <p>Explore thousands of acres of pristine forest with hiking trails for all skill levels just minutes away.</p>
+                    </div>
+                    <img src="/api/placeholder/150/100" alt="Willamette National Forest" class="hotspot-image">
+                </div>
+                <div class="hotspot-card">
+                    <div class="hotspot-content">
+                        <h3>Mountain Biking Trails</h3>
+                        <p>World-class mountain biking trails including the famous Alpine Trail system within easy reach.</p>
+                    </div>
+                    <img src="/api/placeholder/150/100" alt="Mountain Biking Trails" class="hotspot-image">
+                </div>
+                <div class="hotspot-card">
+                    <div class="hotspot-content">
+                        <h3>Oakridge Breweries</h3>
+                        <p>Visit local craft breweries in nearby Oakridge for a taste of Oregon's famous beer culture.</p>
+                    </div>
+                    <img src="/api/placeholder/150/100" alt="Oakridge Breweries" class="hotspot-image">
+                </div>
+                <div class="hotspot-card">
+                    <div class="hotspot-content">
+                        <h3>Waldo Lake</h3>
+                        <p>One of the purest lakes in the world, perfect for swimming, kayaking, and fishing in summer months.</p>
+                    </div>
+                    <img src="/api/placeholder/150/100" alt="Waldo Lake" class="hotspot-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-bar">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 10px;">Ready for Your Adventure?</h2>
+            <p>Book your stay now and experience the beauty of West Fir, Oregon</p>
+            <a href="https://www.airbnb.com/h/westfiradventurebungalow" class="button">Check Availability</a>
+            <div id="countdown">Redirecting to Airbnb in 10 seconds...</div>
+        </div>
+    </div>
+
+    <div class="redirect-notice">
+        <p>If you aren't automatically redirected, <a href="https://www.airbnb.com/h/westfiradventurebungalow">click here to visit our Airbnb listing</a>.</p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 West Fir Adventure Bungalow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown timer for redirect
+        let seconds = 10;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdownTimer = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = `Redirecting to Airbnb in ${seconds} seconds...`;
+            
+            if (seconds <= 0) {
+                clearInterval(countdownTimer);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
