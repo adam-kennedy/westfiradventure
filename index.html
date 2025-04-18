@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WestFir Adventure Bungalow</title>
+    <title>West Fir Adventure Bungalow</title>
     <meta http-equiv="refresh" content="10; url=https://www.airbnb.com/h/westfiradventurebungalow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -177,6 +177,107 @@
             border-radius: 5px;
         }
         
+        /* Review section styles */
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .rating {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stars {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        
+        .rating-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .review-button {
+            margin: 0;
+        }
+        
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .review-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .reviewer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .reviewer-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .reviewer-info {
+            margin-left: 15px;
+        }
+        
+        .reviewer-info h4 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+        
+        .review-date {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .review-card p {
+            margin: 0;
+            font-style: italic;
+            flex-grow: 1;
+        }
+        
+        /* Responsive reviews */
+        @media (max-width: 992px) {
+            .reviews {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .reviews-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .review-button {
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .reviews {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .cta-bar {
             background-color: var(--accent-color);
             text-align: center;
@@ -264,7 +365,7 @@
     <header>
         <div class="header-bg"></div>
         <div class="container header-content">
-            <h1>WestFir Adventure Bungalow</h1>
+            <h1>West Fir Adventure Bungalow</h1>
             <p class="subtitle">Your Gateway to Oregon's Outdoor Paradise</p>
             <a href="https://www.airbnb.com/h/westfiradventurebungalow" class="button">View on Airbnb</a>
         </div>
@@ -272,7 +373,7 @@
 
     <div class="container">
         <div class="image-container">
-            <img src="/api/placeholder/800/500" alt="WestFir Adventure Bungalow" class="feature-image">
+            <img src="/api/placeholder/800/500" alt="West Fir Adventure Bungalow" class="feature-image">
         </div>
     </div>
 
@@ -289,8 +390,8 @@
                     <p>Warm up by the fireplace after a day of outdoor adventures in the mountains.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Private Storage Shed</h3>
-                    <p>Keep all your gear in a secure and sheltered shed</p>
+                    <h3>Private Hot Tub</h3>
+                    <p>Relax under the stars in your own private hot tub on the deck.</p>
                 </div>
                 <div class="feature-card">
                     <h3>Outdoor Deck</h3>
@@ -344,10 +445,55 @@
         </div>
     </section>
 
+    <section class="section section-light">
+        <div class="container">
+            <h2>Guest Reviews</h2>
+            <div class="reviews-header">
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-text">5.0 · 17 reviews</span>
+                </div>
+                <a href="https://www.airbnb.com/rooms/1185082484006565679/reviews?source_impression_id=p3_1744994408_P3KdjYucyyCcPK3f" class="button review-button">Read All Reviews</a>
+            </div>
+            <div class="reviews">
+                <div class="review-card">
+                    <div class="reviewer">
+                        <img src="/api/placeholder/50/50" alt="Guest" class="reviewer-img">
+                        <div class="reviewer-info">
+                            <h4>Adrienne</h4>
+                            <span class="review-date">April 2025</span>
+                        </div>
+                    </div>
+                    <p>"Charming, delightful and comfortable spot for exploring this beautiful part of Oregon. Highly recommended!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer">
+                        <img src="/api/placeholder/50/50" alt="Guest" class="reviewer-img">
+                        <div class="reviewer-info">
+                            <h4>Halle</h4>
+                            <span class="review-date">April 2025</span>
+                        </div>
+                    </div>
+                    <p>"What a beautiful home! Super friendly and thoughtful hosts. The space was so cozy and perfect for the four of us, and the kitchen had everything we needed. Also, the location was wonderful— there are so many cool spots nearby to explore! We had such a fun time visiting Oregon for our spring break thanks to Taryn and Adam, it was everything we were looking for and more. Thank you for this lovely experience, would love to come back soon!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer">
+                        <img src="/api/placeholder/50/50" alt="Guest" class="reviewer-img">
+                        <div class="reviewer-info">
+                            <h4>Alyssa</h4>
+                            <span class="review-date">December 2024</span>
+                        </div>
+                    </div>
+                    <p>"SI absolutely loved Taryn’s home! I stayed here over Christmas and the home and area felt like a warm hug ! The area was tucked away and peaceful, while also being absolutely gorgeous! There was a really cool park area across a covered bridge, maybe a two minute walk from the home which had a hiking trail attached to it that was fun to walk around and explore! Beyond that, as you will see in the guide book provided in the home there are numerous outdoor activities near the area! The home was so perfectly put together, there truly is no way to describe it but a home away from home! The bed was so comfortable, and a fan and white noise machine was provided! That is rare! The kitchen is more than fully stocked and everything was pristinely clean! The yard was adorned with multiple spaces to sit and relax! I would highly recommend this home to anybody, not only is Taryn ve"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="cta-bar">
         <div class="container">
             <h2 style="color: white; margin-bottom: 10px;">Ready for Your Adventure?</h2>
-            <p>Book your stay now and experience the beauty of WestFir, Oregon</p>
+            <p>Book your stay now and experience the beauty of West Fir, Oregon</p>
             <a href="https://www.airbnb.com/h/westfiradventurebungalow" class="button">Check Availability</a>
             <div id="countdown">Redirecting to Airbnb in 10 seconds...</div>
         </div>
@@ -359,13 +505,13 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 WestFir Adventure Bungalow. All rights reserved.</p>
+            <p>&copy; 2025 West Fir Adventure Bungalow. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
         // Countdown timer for redirect
-        let seconds = 90;
+        let seconds = 10;
         const countdownElement = document.getElementById('countdown');
         
         const countdownTimer = setInterval(() => {
